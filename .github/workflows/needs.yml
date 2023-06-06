@@ -19,5 +19,8 @@ jobs:
     needs:
       - first
       - second
+    if: (success() || failure())
     steps:
     - uses: garnercorp/build-actions/failure@add-action-to-handle-failed-dependencies
+      with:
+        needs-json: ${{ github.needs }}
