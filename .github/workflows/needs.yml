@@ -9,8 +9,6 @@ jobs:
       run: 'false'
 
   second:
-    needs:
-    - first
     runs-on: ubuntu-latest
     steps:
     - name: pass?
