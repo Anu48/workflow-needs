@@ -5,8 +5,8 @@ jobs:
   first:
     runs-on: ubuntu-latest
     steps:
-    - name: fail
-      run: 'false'
+    - name: pass?
+      run: 'true'
 
   second:
     runs-on: ubuntu-latest
