@@ -17,5 +17,6 @@ jobs:
       run: 'echo I guess?'
 
   failure:
-    uses: garnercorp/build-actions/failure@add-action-to-handle-failed-dependencies
-
+    runs-on: ubuntu-latest
+    steps:
+    - uses: garnercorp/build-actions/failure@add-action-to-handle-failed-dependencies
