@@ -18,5 +18,8 @@ jobs:
 
   failure:
     runs-on: ubuntu-latest
+    needs:
+      - first
+      - second
     steps:
     - uses: garnercorp/build-actions/failure@add-action-to-handle-failed-dependencies
