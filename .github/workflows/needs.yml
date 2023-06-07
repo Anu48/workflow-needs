@@ -6,21 +6,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: fail
-      run: 'true'
+      run: 'false'
 
   second:
     runs-on: ubuntu-latest
     steps:
     - name: fail
-      run: 'true'
+      run: 'false'
 
-  failure:
+  dependent:
     runs-on: ubuntu-latest
     needs:
       - first
       - second
     if: (success() || failure())
     steps:
-    - uses: garnercorp/build-actions/needs@add-action-to-handle-failed-dependencies
+    - uses: garnercorp/build-actions/release@release-with-needs
       with:
-        needs-json: ${{ toJSON(needs) }}
+        repository: Anu48/workflow-needs
+        ssh-key: "${{ secrets.PUSH_KEY }}"
+        mail: nobody@github.com
+        name: nobody
