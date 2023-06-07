@@ -21,6 +21,6 @@ jobs:
       - second
     if: (success() || failure())
     steps:
-    - uses: garnercorp/build-actions/failure@add-action-to-handle-failed-dependencies
+    - uses: garnercorp/build-actions/needs@add-action-to-handle-failed-dependencies
       with:
         needs-json: ${{ toJSON(needs) }}
