@@ -27,3 +27,4 @@ jobs:
         ssh-key: "${{ secrets.PUSH_KEY }}"
         mail: nobody@github.com
         name: nobody
+        needs-json: ${{ toJSON(needs) }}
