@@ -19,8 +19,9 @@ jobs:
     needs:
       - first
       - second
+    if: (success() || failure())
     steps:
-    - uses: garnercorp/build-actions/release@release-with-needs
+    - uses: garnercorp/build-actions/release@main
       with:
         repository: Anu48/workflow-needs
         ssh-key: "${{ secrets.PUSH_KEY }}"
