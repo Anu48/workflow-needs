@@ -19,7 +19,6 @@ jobs:
     needs:
       - first
       - second
-    if: (success() || failure())
     steps:
     - uses: garnercorp/build-actions/release@release-with-needs
       with:
